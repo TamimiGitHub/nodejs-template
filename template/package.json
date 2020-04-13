@@ -10,6 +10,8 @@
     "dotenv": "^8.1.0",
     "hermesjs": "2.x",
     "hermesjs-router": "1.x",
+    {% if asyncapi.server(params.server) === 'solace' -%}
+    "solclientjs": "^10.4",
     {% if asyncapi.server(params.server).protocol() === 'mqtt' -%}
     "hermesjs-mqtt": "2.x",
     {%- endif -%}
